@@ -7,7 +7,11 @@ let validFormats = [
 	'hostname',
 	'ipv4',
 	'ipv6',
-	'uri'
+	'uri',
+    'objectid',
+    'date',
+    'time',
+    'non-negative-integer',
 ];
 
 export default class Format extends StringKeyword {
