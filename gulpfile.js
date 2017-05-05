@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var mocha = require('gulp-mocha');
 var babel = require("gulp-babel");
-var sourcemaps = require('gulp-sourcemaps');
 var path = require('path');
 var del = require('del');
 
@@ -35,9 +34,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('babel', ['clean'], function () {
   return gulp.src(paths.src)
-      .pipe(sourcemaps.init())
       .pipe(babel(babelOptions))
-      .pipe(sourcemaps.write('.', { sourceRoot: paths.sourceRoot }))
       .pipe(gulp.dest(paths.dist));
 });
 
